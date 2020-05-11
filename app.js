@@ -5,5 +5,5 @@ const ejs = require('ejs');
 const app=express();
 
 app.listen(3000,function(){
-  console.log("Server is up and running");
+  console.log("Server is up and running and all good");
 });
