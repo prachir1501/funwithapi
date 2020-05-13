@@ -1,0 +1,32 @@
+<%-include('header');-%>
+
+
+<%restaurants.forEach(function(restaurant){%>
+
+
+  <div class="restaurant">
+
+    <h1 class="resheading"><%=restaurant.restaurant.name%></h1>
+    <h1 class="rescuisine "><%=restaurant.restaurant.cuisines%></h1>
+    <h1 class="resprice">Rs. <%=restaurant.restaurant.average_cost_for_two%></h1>
+
+    <img src="<%=restaurant.restaurant.featured_image%>" class="resimage" alt="error">
+
+    <a href="<%=restaurant.restaurant.url%>"><h1>Order here</h1></a>
+
+
+
+
+
+
+  </div>
+
+
+
+
+<%})%>
+
+
+
+
+<%-include('footer');-%>
