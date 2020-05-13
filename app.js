@@ -131,7 +131,12 @@ http.get(url, function(res) {
 
                   resinitial.render("home.ejs", {
                     city: city,
-                    cases: district.cases
+                    cases: district.cases,
+                    deaths: district.deaths,
+                    recovered:district.recovered,
+                    active:district.active,
+                    error:false
+
                   });
                   flag = 1;
 
@@ -143,8 +148,12 @@ http.get(url, function(res) {
 
           if (flag == 0) {
             resinitial.render("home.ejs", {
-              city: 'undefined2',
-              cases: 'undefined2'
+              city: "We are not able to fetch your city, sorry for the inconvenience caused",
+              cases: district.cases,
+              deaths: district.deaths,
+              recovered:district.recovered,
+              active:district.active,
+              error:true
             });
           }
 
