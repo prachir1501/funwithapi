@@ -19,9 +19,6 @@ app.set('view-engine', 'ejs');
 
 var lat, lon;
 
-
-
-
 app.listen(3000, function() {
   console.log("Server is up and running and all good");
 });
@@ -39,7 +36,7 @@ app.get("/news", function(res, req) {
   }).then(response => {
 
 
-    req.render("news", {
+    req.render("news.ejs", {
       desc: response.articles
     });
     /*
@@ -52,7 +49,6 @@ app.get("/news", function(res, req) {
 
 
 });
-
 
 app.get("/", function(req, resinitial) {
 
@@ -173,14 +169,6 @@ http.get(url, function(res) {
 
 
 })
-
-
-
-
-})
-
-
-
 
 
 
