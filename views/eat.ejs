@@ -1,26 +1,48 @@
 <%-include('header');-%>
 
 
+<div class="restrogrid">
+
+
+<%var i=0;%>
+
 <%restaurants.forEach(function(restaurant){%>
 
 
-  <div class="restaurant">
-
-    <h1 class="resheading"><%=restaurant.restaurant.name%></h1>
-    <h1 class="rescuisine "><%=restaurant.restaurant.cuisines%></h1>
-    <h1 class="resprice">Rs. <%=restaurant.restaurant.average_cost_for_two%></h1>
-
-    <img src="<%=restaurant.restaurant.featured_image%>" class="resimage" alt="error">
-
-    <a href="<%=restaurant.restaurant.url%>"><h1>Order here</h1></a>
 
 
-  </div>
+  <%if(i==0) {%>
+    <div class="row">
+
+  <%}%>
+
+  <%if(i%3==0&&i!=0) {%>
+    </div>
+    <div class="row">
+
+  <%}%>
 
 
 
+  <div class="col-md-4 restaurant">
+           <div class="card mb-4 border-dark">
+              <img class="card-img-top" src="<%=restaurant.restaurant.featured_image%>" alt="Card image cap">
+              <div class="card-body">
+                 <h5 class="card-title"><%=restaurant.restaurant.name%></h5>
+                 <p class="card-text"><%=restaurant.restaurant.cuisines%></p>
+                 <p class="card-text">Rs. <%=restaurant.restaurant.average_cost_for_two%></p>
+                 <a href="<%=restaurant.restaurant.url%>" class="btn btn-dark btn-sm">Order here</a>
+              </div>
+           </div>
+        </div>
+
+  <%i++;%>
 
 <%})%>
+
+</div>
+
+</div>
 
 
 
