@@ -52,7 +52,7 @@ app.get("/news", function(res, req) {
 
 app.get("/", function(req, resinitial) {
 
-ip = '103.80.62.170'; //put ip=req.ip
+ip = '43.230.64.142'; //put ip=req.ip
 url = 'http://ip-api.com/json/' + ip;
 
 console.log(url);
