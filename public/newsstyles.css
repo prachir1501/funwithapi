@@ -1,0 +1,19 @@
+.newsa {
+  display: inline-block;
+  background-color: pink;
+  height: 40%;
+  width:  40%;
+  position: relative;
+  border-radius: 10%;
+}
+
+.img{
+  height: 200px;
+  height: 200px;
+  position: relative;
+  border-radius: 10%;
+}
+
+p{
+  text-align: center;
+}
