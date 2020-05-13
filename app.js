@@ -4,6 +4,8 @@ const ejs = require('ejs');
 const https = require('https');
 const http = require('http');
 const axios = require('axios');
+const NewsAPI = require('newsapi');
+const newsapi = new NewsAPI('83cb4a7eaa5c43a7b869d0f401b9bc82');
 
 const app=express();
 
@@ -16,7 +18,15 @@ app.set('view-engine','ejs');
 var lat,lon;
 
 
-app.listen(3000,function(){
+const app = express();
+
+app.set('view engine', 'ejs');
+app.use(express.static(__dirname + '/public'));
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+
+app.listen(3000, function() {
   console.log("Server is up and running and all good");
 });
 
@@ -27,9 +37,9 @@ app.get("/",function(req,resinitial){
 
   console.log(url);
 
-  http.get(url,function(res){
-    res.on("data",function(data){
-      let locinfo=JSON.parse(data);
+  http.get(url, function(res) {
+    res.on("data", function(data) {
+      let locinfo = JSON.parse(data);
 
       let city=locinfo.city;
 
@@ -44,7 +54,7 @@ app.get("/",function(req,resinitial){
       url2='https://indian-cities-api-nocbegfhqg.now.sh/cities?City_like='+city+'&State_like='+locinfo.regionName;
       console.log(url2);
 
-      https.get(url2,function(res2){
+      https.get(url2, function(res2) {
 
         res2.on("data",function(data){
           let cityarr=JSON.parse(data);
@@ -114,6 +124,7 @@ app.get("/",function(req,resinitial){
 
 
 
+          });
 
 
 
