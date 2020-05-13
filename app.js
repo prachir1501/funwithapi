@@ -31,7 +31,7 @@ app.get("/news", function(res, req) {
 
 
 
-    q: "covid",
+    category: 'health',
     country: 'in'
   }).then(response => {
 
