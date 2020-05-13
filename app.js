@@ -31,7 +31,7 @@ app.get("/news", function(res, req) {
 
 
 
-    q: "covid",
+    category: 'health',
     country: 'in'
   }).then(response => {
 
@@ -178,7 +178,7 @@ http.get(url, function(res) {
 app.get("/eat", function(req, response) {
 
   if (lat == undefined && lon == undefined) {
-    res.redirect("/");
+    response.redirect("/");
   }
 
   console.log(lat + ',' + lon);
