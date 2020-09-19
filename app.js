@@ -52,7 +52,7 @@ app.get("/news", function(res, req) {
 
 app.get("/", function(req, resinitial) {
 
-ip = '43.230.64.142'; //put ip=req.ip
+ip = '103.77.0.55'; //put ip=req.ip
 url = 'http://ip-api.com/json/' + ip;
 
 console.log(url);
@@ -77,7 +77,12 @@ http.get(url, function(res) {
     https.get(url2, function(res2) {
 
       res2.on("data", function(data) {
-        let cityarr = JSON.parse(data);
+        // let cityarr = JSON.parse(data);
+        let cityarr= new Array();
+        cityarr[0]={
+          District: 'Gautam Buddha Nagar',
+          State: 'Uttar Pradesh'
+        }
 
         if (cityarr[0] == undefined) {
 
